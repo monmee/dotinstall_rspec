@@ -1,12 +1,12 @@
 require 'calc'
 
 # test double: 代役オブジェクト
-# method stub: 実装していないけどテストに使えるメソッドをを作るためのtest double
+# message expectation: 呼ばれなかったらテストが失敗する
 RSpec.describe Calc do
   it {
-    user = double('user')
-    allow(user).to receive(:name).and_return('taguchi')
-    calc = Calc.new
-    expect(calc.add(5, 2, user.name)).to eq '7 by taguchi'
+    logger = double('logger')
+    expect(logger).to receive(:log)
+    calc = Calc.new(logger)
+    expect(calc.add(5, 2)).to eq 7
   }
 end

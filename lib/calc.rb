@@ -1,12 +1,11 @@
 class Calc
-  attr_accessor :tax
-  def initialize
-    @tax = 0
+  def initialize(logger)
+    @logger = logger
   end
 
-  def add(a, b, name)
+  def add(a, b)
     # 5 # 仮実装
-    (a + b).to_s + ' by ' + name # 明らかな実装
+    a + b # 明らかな実装
   end
 
   def price(x)
