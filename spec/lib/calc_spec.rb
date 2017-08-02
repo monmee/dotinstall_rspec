@@ -1,19 +1,6 @@
-require 'spec_helper'
-require 'calc'
-
-RSpec.shared_examples 'basic functions' do
-  it 'can add'
-  it 'can subtrace'
-  it 'can multiply'
-  it 'can divde'
-end
-
-RSpec.describe Calc do
-  context 'normal mode' do
-    include_examples 'basic functions'
-  end
-  context 'expert mode' do
-    include_examples 'basic functions'
-    it 'draws graph'
+RSpec.describe 'A calc' do
+  it 'given 2 and 3, returns 5' do
+    calc = Calc.new
+    expect(calc.add(2,3)).to eq 5
   end
 end
