@@ -6,4 +6,5 @@ RSpec.describe Calc do
     calc = Calc.new
     expect(calc.add(2,3)).to eq 5
   }
+  it 'draws graph'
 end
