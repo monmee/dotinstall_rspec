@@ -4,9 +4,9 @@ class Calc
     @tax = 0
   end
 
-  def add(a, b)
+  def add(a, b, name)
     # 5 # 仮実装
-    a + b # 明らかな実装
+    (a + b).to_s + ' by ' + name # 明らかな実装
   end
 
   def price(x)
