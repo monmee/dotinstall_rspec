@@ -1,11 +1,12 @@
 require 'calc'
 
+# test double: 代役オブジェクト
+# method stub: 実装していないけどテストに使えるメソッドをを作るためのtest double
 RSpec.describe Calc do
-  subject(:calc) { Calc.new }
-  # let
-  # exampleごとに結果がキャッシュされる
-  # 遅延評価
-  let!(:tax) { calc.tax = 0.05 }
-  it { expect(tax).to eq 0.05 }
-  it { expect(calc.price(100)).to eq 105 }
+  it {
+    user = double('user')
+    allow user.to receive(name).and_return('taguchi')
+    calc = Calc.new
+    expect(calc.add(5, 2, name)).to eq '7 by taguchi'
+  }
 end
