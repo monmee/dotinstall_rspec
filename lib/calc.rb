@@ -4,7 +4,7 @@ class Calc
   end
 
   def add(a, b)
-    # 5 # 仮実装
+    @logger.log
     a + b # 明らかな実装
   end
 
